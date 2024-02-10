@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>strimek.fun</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 5px;
+            display: inline-block;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffee00;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>pszelews strims</h1>
+    </header>
+    <nav>
+        <a href="./index.html">Strona Glowna</a>
+        <a href="https://t.me/easybackup">Kontakt</a>
+        <a href="https://tipply.pl/u/_pszelew">Wsparcie</a>
+        <a href="./dmca.html">DMCA</a>
+    <a href="./player1.html">FAME MMA 20</a>
+    
+    </nav>
+    
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pszelews strim</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #streams-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .stream {
+            width: 300px;
+            margin: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .stream img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .stream-info {
+            padding: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .telegram-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .telegram-link a {
+            color: #4285f4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .fame-link {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .fame-link a {
+            color: #4285f4;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <div id="streams-container"></div>
+
+    <footer>
+        <p> strimek.fun | all rights reserved �.</p>
+    </footer>
+
+    <div class="telegram-link">
+        <p>Nasz telegram:</p>
+        <p><a href="https://t.me/strimekfun" onclick="przekierujTelegram()">Kliknij tu!</a></p>
+    </div>
+    
+    
+
+    <script>
+        // Przykladowe dane stream�w (mozesz dostosowac wedlug potrzeb)
+        const streamsData = [
+            { title: 'REKLAMA', thumbnail: 'https://media.discordapp.net/attachments/1183458873567354930/1199774264824442900/dupadupa.png?ex=65c3c3db&is=65b14edb&hm=33f52af00d3b5802d1070c24d88294e864583bba6adc39fd5ac26067b4e7c81b&=&format=webp&quality=lossless' },
+            { title: 'FAME MMA 20', thumbnail: 'https://media.discordapp.net/attachments/1188193205649412128/1200756646901723197/fame-mma-logo.png?ex=65c756c5&is=65b4e1c5&hm=f68533fd7c34a6685b2c12236672cd49e7eef5ee0246473ea2eb6df2dc37a059&=&format=webp&quality=lossless' },
+            { title: 'REKLAMA', thumbnail: 'https://cdn.discordapp.com/attachments/1183458873567354930/1199774264824442900/dupadupa.png?ex=65c3c3db&is=65b14edb&hm=33f52af00d3b5802d1070c24d88294e864583bba6adc39fd5ac26067b4e7c81b&' },
+            // Dodaj wiecej stream�w wedlug potrzeb
+        ];
+
+        const streamsContainer = document.getElementById('streams-container');
+
+        // Generowanie kodu HTML dla kazdego streama
+        streamsData.forEach(stream => {
+            const streamElement = document.createElement('div');
+            streamElement.classList.add('stream');
+
+            const thumbnailElement = document.createElement('img');
+            thumbnailElement.src = stream.thumbnail;
+            thumbnailElement.alt = stream.title;
+
+            const streamInfoElement = document.createElement('div');
+            streamInfoElement.classList.add('stream-info');
+            streamInfoElement.innerHTML = `<h3>${stream.title}</h3>`;
+
+            streamElement.appendChild(thumbnailElement);
+            streamElement.appendChild(streamInfoElement);
+
+            streamsContainer.appendChild(streamElement);
+        });
+
+        // Funkcja przekierowujaca do Telegrama
+        function przekierujTelegram() {
+            window.location.href = 'https://t.me/strimekfun';
+        }
+
+           
+    </script>
+  
+
+  
+  <script>
+    // Dodaj event listenery dla kazdego obrazka
+    const streamElements = document.querySelectorAll('.stream');
+    streamElements.forEach((streamElement, index) => {
+        streamElement.addEventListener('click', () => {
+            // Tutaj mozesz dostosowac przekierowanie dla kazdego streama
+            switch (index) {
+                case 0:
+                    // Przekierowanie dla pierwszego streama
+                    window.location.href = 'https://t.me/Saze_L';
+                    break;
+                case 1:
+                    // Przekierowanie dla drugiego streama
+                    window.location.href = './player1.html';
+                    break;
+                case 2:
+                    // Przekierowanie dla trzeciego streama
+                    window.location.href = 'https://t.me/Saze_L';
+                    break;
+            }
+        });
+    });
+</script>
+
+  
+  
+  
+  
+  
+</body>
+</html>
+
+
+</body>
+</html>
